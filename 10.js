@@ -1,24 +1,28 @@
-var primes = [2], result, limit = 2000000, len = 0;
+var all = [], primes = [], result, limit = 2000000, i = 1, j = 2;
 
-function isPrime(n) {
+// array with 20 elements
+while (i++ < limit) {
+  all.push(true)
+}
 
-  for (var i = 0; i < primes.length; i++) {
-    if (n % primes[i] === 0) return false
+// filter array with the sieve of Eratosthenes
+for (var j = 2, len = all.length; j < len; j++) {
+  if (j > Math.sqrt(limit)) break
+  if (all[j]) {
+    for (var k = j + j; k < len; k += j) {
+      all[k] = false
+    }
   }
-
-  len = primes.push(n) - 1;
-
-  return true
 }
 
-var j = 3;
-
-while (primes[len] < limit) {
-  isPrime(j++);
+// push all true values to primes array
+for (var j = 0, len = all.length; j < len; j++) {
+  if (j > 1 && all[j]) {
+    primes.push(j)
+  }
 }
 
-primes.pop()
+// Sum all values
 result = primes.reduce(function(a,b) { return a + b; })
 
 console.log(result);
-
