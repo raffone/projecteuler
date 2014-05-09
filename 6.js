@@ -11,3 +11,5 @@ while (j-- > 1) {
 }
 
 console.log(Math.pow(tmp_j, 2) - tmp_i);
+
+// Execution time: 0ms

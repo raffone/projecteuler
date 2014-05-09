@@ -26,3 +26,5 @@ for (var j = 0, len = all.length; j < len; j++) {
 result = primes.reduce(function(a,b) { return a + b; })
 
 console.log(result);
+
+// Execution time: 385ms

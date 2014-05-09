@@ -22,3 +22,5 @@ function prime_factors(n) {
 }
 
 console.log(prime_factors(600851475143));
+
+// Execution time: 0ms

@@ -55,3 +55,5 @@ for (var i = 0, rows = matrix.length; i < rows; i++) {
 result = products.sort(function(a, b) { return a - b }).reverse()[0]
 
 console.log(result);
+
+// Execution time: 4ms

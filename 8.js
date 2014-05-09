@@ -13,3 +13,5 @@ for (var i = 0, tmp; i < len; i++) {
 result = sums.sort(function(a,b) { return b - a })
 
 console.log(result[0]);
+
+// Execution time: 3ms

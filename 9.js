@@ -10,3 +10,5 @@ for (a = 1; a < limit; a++) {
     }
   }
 }
+
+// Execution time: 783ms

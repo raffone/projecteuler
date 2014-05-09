@@ -22,3 +22,5 @@ while(true) {
   }
 
 }
+
+// Execution time: 607ms

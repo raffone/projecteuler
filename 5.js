@@ -18,3 +18,5 @@ while (i += limit) {
   }
 
 }
+
+// Execution time: 192ms
