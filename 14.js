@@ -11,7 +11,7 @@ function getSequence(n) {
   return counter;
 }
 
-for (var i = 0, max = [0,0]; i < 1000000; ++i) {
+for (var i = 0, max = [0, 0]; i < 1000000; ++i) {
 
   // Check if current sequence length is higher and previous one
   if (getSequence(i) > max[1]) {

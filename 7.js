@@ -3,12 +3,12 @@ var primes = [2];
 function isPrime(n) {
 
   for (var i = 0; i < primes.length; i++) {
-    if (n % primes[i] === 0) return false
+    if (n % primes[i] === 0) return false;
   }
 
   primes.push(n);
 
-  return true
+  return true;
 }
 
 var j = 3;

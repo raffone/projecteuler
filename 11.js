@@ -26,33 +26,33 @@ for (var i = 0, rows = matrix.length; i < rows; i++) {
   for (var j = 0, cols = matrix[0].length, tmp; j < cols; j++) {
 
     // right
-    if (j < (cols - 3) ) {
-      tmp = matrix[i][j] * matrix[i][j+1] * matrix[i][j+2] * matrix[i][j+3]
-      products.push( tmp )
+    if (j < (cols - 3)) {
+      tmp = matrix[i][j] * matrix[i][j + 1] * matrix[i][j + 2] * matrix[i][j + 3];
+      products.push(tmp);
     }
 
     // bottom
-    if (i < (rows - 3) ) {
-      tmp = matrix[i][j] * matrix[i+1][j] * matrix[i+2][j] * matrix[i+3][j]
-      products.push( tmp )
+    if (i < (rows - 3)) {
+      tmp = matrix[i][j] * matrix[i + 1][j] * matrix[i + 2][j] * matrix[i + 3][j];
+      products.push(tmp);
     }
 
     // diag down/right
-    if (i < (rows - 3) && j < (cols - 3) ) {
-      tmp = matrix[i][j] * matrix[i+1][j+1] * matrix[i+2][j+2] * matrix[i+3][j+3]
-      products.push( tmp )
+    if (i < (rows - 3) && j < (cols - 3)) {
+      tmp = matrix[i][j] * matrix[i + 1][j + 1] * matrix[i + 2][j + 2] * matrix[i + 3][j + 3];
+      products.push(tmp);
     }
 
     // diag down/left
-    if (i < (rows - 3) && j > 2 ) {
-      tmp = matrix[i][j] * matrix[i+1][j-1] * matrix[i+2][j-2] * matrix[i+3][j-3]
-      products.push( tmp )
+    if (i < (rows - 3) && j > 2) {
+      tmp = matrix[i][j] * matrix[i + 1][j - 1] * matrix[i + 2][j - 2] * matrix[i + 3][j - 3];
+      products.push(tmp);
     }
   }
 }
 
 // Sort numbers, reverse array and pick first (highest)
-result = products.sort(function(a, b) { return a - b }).reverse()[0]
+result = products.sort(function(a, b) { return a - b }).reverse()[0];
 
 console.log(result);
 

@@ -8,7 +8,7 @@ while (i += limit) {
   while (mod-- > 1) {
     if (i % mod !== 0) {
       tmp = false;
-      break
+      break;
     }
   }
 
