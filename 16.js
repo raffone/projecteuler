@@ -11,3 +11,5 @@ var result = bigInt(2)
                 .reduce(function(a, b) { return +a + +b; })
 
 console.log(result);
+
+// Execution time: 15ms
