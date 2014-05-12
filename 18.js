@@ -1,44 +1,44 @@
-// readfile
-fs = require('fs');
-fs.readFile('18.txt', 'utf8', function(err, data) {
-  if (err) return console.log(err);
-  sum(data);
+// Reference used: http://stackoverflow.com/a/8002423/75684
 
-});
+var fs = require('fs'),
+    util = require('util'),
+    content = fs.readFileSync('18.txt', 'utf8');
 
+var maxPath = function(data) {
 
-function sum(data) {
+  // Convert multiline string in array and split numbers strings in array
   data = data.split('\n').map(function(el) { return el.split(' ')});
 
-  var last = 0, path = [], max = 0;
+  // Loop through until only one row remains
+  while (data.length > 1) {
 
-  for (var i = 0; i < data.length; ++i) {
+    // Get reference last row
+    var last = data.length - 1;
 
-    if (data[i].length === 1) {
-      path.push(data[i][0]);
-      last = 0;
+    // For each element in last arrow
+    for (var i = 0, sums; i < data[last].length - 1; ++i) {
 
-    } else {
-      max = +data[i][last] > +data[i][last + 1] ? last : last + 1;
-      path.push(data[i][max]);
-      last = max;
+      // Sum current and next number with next row
+      sums = [];
+      sums.push(+data[last][i] + +data[last - 1][i]);
+      sums.push(+data[last][i + 1] + +data[last - 1][i]);
+
+      // Change number in next row with the maximum of the two
+      data[last - 1][i] = Math.max.apply(null, sums);
     }
+
+    // Delete last row, we don't need it anymore
+    data.pop();
 
   }
 
-  path = path.reduce(function(a, b) { return +a + +b; });
+  return data;
+};
 
-  console.log(path);
-}
+// Print result
+util.print(maxPath(content));
 
+// export module for use in 67 solution.
+module.exports.maxPath = maxPath;
 
-
-
-
-
-
-
-
-
-
-// Execution time: 8ms
+// Execution time: 0ms
