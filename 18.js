@@ -1,5 +1,3 @@
-// Reference used: http://stackoverflow.com/a/8002423/75684
-
 var fs = require('fs'),
     util = require('util'),
     content = fs.readFileSync('18.txt', 'utf8');
