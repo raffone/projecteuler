@@ -1,13 +1,9 @@
 function getFactors(n) {
   var result = [1];
 
-  for (var bottom = 2, top = n; bottom < top; bottom++) {
-    for (var i = top; i > bottom; i--) {
-      if (bottom * i == n) {
-        top = i;
-        result.push(bottom, top);
-        break;
-      }
+  for (var i = 2; i < Math.sqrt(n); i++) {
+    if (n % i === 0) {
+      result.push(i, n / i);
     }
   }
 
@@ -38,4 +34,4 @@ for (var i = 0; i < 10000; ++i) {
 
 console.log(fact.reduce(function(a, b) {return a + b }));
 
-// Execution time: 39512ms  <- Yep, I need to revisit this one
+// Execution time: 2ms
