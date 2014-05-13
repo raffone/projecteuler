@@ -1,7 +1,7 @@
 function getFactors(n) {
   var result = [1];
 
-  for (var bottom = 2, top = Math.floor(Math.sqrt(n)); bottom < top; bottom++) {
+  for (var bottom = 2, top = n; bottom < top; bottom++) {
     for (var i = top; i > bottom; i--) {
       if (bottom * i == n) {
         top = i;
